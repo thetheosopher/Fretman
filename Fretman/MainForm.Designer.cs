@@ -178,7 +178,8 @@
             this.noteLayoutPanel.Controls.Add(this.noteStyle0, 0, 1);
             this.noteLayoutPanel.Controls.Add(this.noteColor0, 0, 2);
             this.noteLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.noteLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.noteLayoutPanel.Location = new System.Drawing.Point(8, 8);
+            this.noteLayoutPanel.Margin = new System.Windows.Forms.Padding(8);
             this.noteLayoutPanel.Name = "noteLayoutPanel";
             this.noteLayoutPanel.RowCount = 4;
             this.noteLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
@@ -648,10 +649,11 @@
             // 
             this.fretboardProperties.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fretboardProperties.HelpVisible = false;
-            this.fretboardProperties.Location = new System.Drawing.Point(0, 0);
+            this.fretboardProperties.Location = new System.Drawing.Point(8, 8);
+            this.fretboardProperties.Margin = new System.Windows.Forms.Padding(8);
             this.fretboardProperties.Name = "fretboardProperties";
             this.fretboardProperties.PropertySort = System.Windows.Forms.PropertySort.NoSort;
-            this.fretboardProperties.Size = new System.Drawing.Size(250, 645);
+            this.fretboardProperties.Size = new System.Drawing.Size(238, 621);
             this.fretboardProperties.TabIndex = 0;
             this.fretboardProperties.ToolbarVisible = false;
             // 
@@ -665,12 +667,14 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.fretboardProperties);
+            this.splitContainer1.Panel1.Padding = new System.Windows.Forms.Padding(8);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
+            this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(8);
             this.splitContainer1.Size = new System.Drawing.Size(1340, 645);
-            this.splitContainer1.SplitterDistance = 250;
+            this.splitContainer1.SplitterDistance = 266;
             this.splitContainer1.TabIndex = 1;
             // 
             // splitContainer2
@@ -678,20 +682,22 @@
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer2.IsSplitterFixed = true;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Location = new System.Drawing.Point(8, 8);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.Controls.Add(this.noteLayoutPanel);
+            this.splitContainer2.Panel1.Padding = new System.Windows.Forms.Padding(8);
             // 
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.AutoScroll = true;
             this.splitContainer2.Panel2.Controls.Add(this.fretboardImage);
-            this.splitContainer2.Size = new System.Drawing.Size(1086, 645);
-            this.splitContainer2.SplitterDistance = 120;
+            this.splitContainer2.Panel2.Padding = new System.Windows.Forms.Padding(8);
+            this.splitContainer2.Size = new System.Drawing.Size(1046, 629);
+            this.splitContainer2.SplitterDistance = 136;
             this.splitContainer2.TabIndex = 0;
             // 
             // saveFileDialog
@@ -706,6 +712,7 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.splitContainer1);
+            this.toolStripContainer1.ContentPanel.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
             this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1340, 645);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.LeftToolStripPanelVisible = false;
@@ -726,8 +733,9 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1340, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1340, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
