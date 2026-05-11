@@ -30,6 +30,8 @@ namespace Fretman
 
         public float NoteWidth { get; set; }
 
+        public float TopJustifyPadding { get; set; }
+
         public int BackgroundColorArgb { get; set; }
 
         public int FretColorArgb { get; set; }
@@ -51,6 +53,8 @@ namespace Fretman
         public int RootHighlightColorArgb { get; set; }
 
         public int FingerboardBackground { get; set; }
+
+        public bool IsDarkMode { get; set; }
 
         public bool UseSharps { get; set; }
 

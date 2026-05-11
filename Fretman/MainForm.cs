@@ -76,6 +76,32 @@ namespace Fretman
             public ScalePattern Pattern { get; private set; }
         }
 
+        private sealed class IntervalCategory
+        {
+            public IntervalCategory(string menuText, params Fretboard.IntervalPatternDefinition[] patterns)
+            {
+                MenuText = menuText;
+                Patterns = patterns;
+            }
+
+            public string MenuText { get; private set; }
+
+            public Fretboard.IntervalPatternDefinition[] Patterns { get; private set; }
+        }
+
+        private sealed class IntervalSelection
+        {
+            public IntervalSelection(RootNoteOption root, Fretboard.IntervalPatternDefinition pattern)
+            {
+                Root = root;
+                Pattern = pattern;
+            }
+
+            public RootNoteOption Root { get; private set; }
+
+            public Fretboard.IntervalPatternDefinition Pattern { get; private set; }
+        }
+
         private sealed class ThemeDefinition
         {
             public ThemeDefinition(string menuText, Color nonScaleNoteColor, Color nonScaleTextColor, Fretboard.FingerboardBackgroundKind preferredBackground, Color[] intervalNoteColors, Color[] intervalTextColors)
@@ -184,6 +210,47 @@ namespace Fretman
                 new ScalePattern("Hirajoshi", "Hirajoshi", 0, 2, 3, 7, 8),
                 new ScalePattern("In Sen", "In Sen", 0, 1, 5, 7, 10),
                 new ScalePattern("Iwato", "Iwato", 0, 1, 5, 6, 10))
+        };
+
+        private static readonly IntervalCategory[] ChordCategories = new IntervalCategory[]
+        {
+            new IntervalCategory("&Triads",
+                new Fretboard.IntervalPatternDefinition("Major", "Major Chord", 0, 4, 7),
+                new Fretboard.IntervalPatternDefinition("Minor", "Minor Chord", 0, 3, 7),
+                new Fretboard.IntervalPatternDefinition("Diminished", "Diminished Chord", 0, 3, 6),
+                new Fretboard.IntervalPatternDefinition("Augmented", "Augmented Chord", 0, 4, 8),
+                new Fretboard.IntervalPatternDefinition("Sus2", "Suspended 2 Chord", 0, 2, 7),
+                new Fretboard.IntervalPatternDefinition("Sus4", "Suspended 4 Chord", 0, 5, 7)),
+            new IntervalCategory("&Seventh Chords",
+                new Fretboard.IntervalPatternDefinition("Dominant 7", "Dominant 7 Chord", 0, 4, 7, 10),
+                new Fretboard.IntervalPatternDefinition("Major 7", "Major 7 Chord", 0, 4, 7, 11),
+                new Fretboard.IntervalPatternDefinition("Minor 7", "Minor 7 Chord", 0, 3, 7, 10),
+                new Fretboard.IntervalPatternDefinition("Half-Diminished", "Half-Diminished Chord", 0, 3, 6, 10),
+                new Fretboard.IntervalPatternDefinition("Diminished 7", "Diminished 7 Chord", 0, 3, 6, 9)),
+            new IntervalCategory("E&xtended",
+                new Fretboard.IntervalPatternDefinition("Add9", "Add9 Chord", 0, 4, 7, 2),
+                new Fretboard.IntervalPatternDefinition("6", "6 Chord", 0, 4, 7, 9),
+                new Fretboard.IntervalPatternDefinition("Minor 6", "Minor 6 Chord", 0, 3, 7, 9),
+                new Fretboard.IntervalPatternDefinition("9", "9 Chord", 0, 4, 7, 10, 2),
+                new Fretboard.IntervalPatternDefinition("11", "11 Chord", 0, 4, 7, 10, 2, 5),
+                new Fretboard.IntervalPatternDefinition("13", "13 Chord", 0, 4, 7, 10, 2, 9))
+        };
+
+        private static readonly IntervalCategory[] ArpeggioCategories = new IntervalCategory[]
+        {
+            new IntervalCategory("&Chord Tones",
+                new Fretboard.IntervalPatternDefinition("Major Triad", "Major Arpeggio", 0, 4, 7),
+                new Fretboard.IntervalPatternDefinition("Minor Triad", "Minor Arpeggio", 0, 3, 7),
+                new Fretboard.IntervalPatternDefinition("Dominant 7", "Dominant 7 Arpeggio", 0, 4, 7, 10),
+                new Fretboard.IntervalPatternDefinition("Major 7", "Major 7 Arpeggio", 0, 4, 7, 11),
+                new Fretboard.IntervalPatternDefinition("Minor 7", "Minor 7 Arpeggio", 0, 3, 7, 10),
+                new Fretboard.IntervalPatternDefinition("Diminished 7", "Diminished 7 Arpeggio", 0, 3, 6, 9)),
+            new IntervalCategory("&Color Tones",
+                new Fretboard.IntervalPatternDefinition("Minor Major 7", "Minor Major 7 Arpeggio", 0, 3, 7, 11),
+                new Fretboard.IntervalPatternDefinition("Major Add9", "Major Add9 Arpeggio", 0, 4, 7, 2),
+                new Fretboard.IntervalPatternDefinition("Minor Add9", "Minor Add9 Arpeggio", 0, 3, 7, 2),
+                new Fretboard.IntervalPatternDefinition("7b9", "Dominant 7b9 Arpeggio", 0, 4, 7, 10, 1),
+                new Fretboard.IntervalPatternDefinition("7#5", "Dominant 7#5 Arpeggio", 0, 4, 8, 10))
         };
 
         private static readonly ThemeDefinition[] ScaleThemes = new ThemeDefinition[]
@@ -296,6 +363,7 @@ namespace Fretman
         private ComboBox[] noteStyles;
         private Label[] noteLabels;
         private bool updatingNoteStyleSelectors;
+        private bool isDarkMode;
         private ScaleSelection currentScaleSelection;
         private ThemeDefinition currentTheme;
 
@@ -377,9 +445,12 @@ namespace Fretman
             InitializeFileMenu();
             InitializeInstrumentMenu();
             InitializeScaleMenu();
+            InitializeChordMenu();
+            InitializeArpeggioMenu();
             InitializeThemeMenu();
             InitializeBackgroundMenu();
             ApplyBaseThemeColors(currentTheme);
+            ApplyDarkMode(false);
             UpdateNoteLabels();
             ConfigureControlTips();
 
@@ -439,21 +510,71 @@ namespace Fretman
             menuStrip1.Items.Add(scalesMenuItem);
         }
 
+        private void InitializeChordMenu()
+        {
+            InitializeIntervalMenu("&Chords", ChordCategories, intervalMenuItem_Click);
+        }
+
+        private void InitializeArpeggioMenu()
+        {
+            InitializeIntervalMenu("&Arpeggios", ArpeggioCategories, intervalMenuItem_Click);
+        }
+
+        private void InitializeIntervalMenu(string menuText, IntervalCategory[] categories, EventHandler clickHandler)
+        {
+            ToolStripMenuItem topMenuItem = new ToolStripMenuItem(menuText);
+            ToolStripMenuItem clearPatternMenuItem = new ToolStripMenuItem("&Clear Pattern");
+
+            clearPatternMenuItem.Click += clearPatternMenuItem_Click;
+            topMenuItem.DropDownItems.Add(clearPatternMenuItem);
+            topMenuItem.DropDownItems.Add(new ToolStripSeparator());
+
+            for (int i = 0; i < categories.Length; i++)
+            {
+                IntervalCategory category = categories[i];
+                ToolStripMenuItem categoryMenuItem = new ToolStripMenuItem(category.MenuText);
+
+                for (int j = 0; j < category.Patterns.Length; j++)
+                {
+                    Fretboard.IntervalPatternDefinition pattern = category.Patterns[j];
+                    ToolStripMenuItem patternMenuItem = new ToolStripMenuItem(pattern.MenuText);
+
+                    for (int k = 0; k < ScaleRoots.Length; k++)
+                    {
+                        RootNoteOption root = ScaleRoots[k];
+                        ToolStripMenuItem rootMenuItem = new ToolStripMenuItem(root.MenuText);
+                        rootMenuItem.Tag = new IntervalSelection(root, pattern);
+                        rootMenuItem.Click += clickHandler;
+                        patternMenuItem.DropDownItems.Add(rootMenuItem);
+                    }
+
+                    categoryMenuItem.DropDownItems.Add(patternMenuItem);
+                }
+
+                topMenuItem.DropDownItems.Add(categoryMenuItem);
+            }
+
+            menuStrip1.Items.Add(topMenuItem);
+        }
+
         private void InitializeFileMenu()
         {
             ToolStripMenuItem resetViewToolStripMenuItem = new ToolStripMenuItem("&Reset View");
             ToolStripMenuItem copyTitleToolStripMenuItem = new ToolStripMenuItem("Copy &Title");
             ToolStripMenuItem toggleAccidentalsToolStripMenuItem = new ToolStripMenuItem("Toggle S&harps/Flats");
+            ToolStripMenuItem toggleDarkModeToolStripMenuItem = new ToolStripMenuItem("Toggle &Dark Mode");
             ToolStripMenuItem exitToolStripMenuItem = new ToolStripMenuItem("E&xit");
 
             resetViewToolStripMenuItem.Click += resetViewToolStripMenuItem_Click;
             copyTitleToolStripMenuItem.Click += copyTitleToolStripMenuItem_Click;
             toggleAccidentalsToolStripMenuItem.Click += toggleAccidentalsToolStripMenuItem_Click;
+            toggleDarkModeToolStripMenuItem.Click += toggleDarkModeToolStripMenuItem_Click;
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             fileToolStripMenuItem.DropDownItems.Add(new ToolStripSeparator());
             fileToolStripMenuItem.DropDownItems.Add(resetViewToolStripMenuItem);
             fileToolStripMenuItem.DropDownItems.Add(copyTitleToolStripMenuItem);
             fileToolStripMenuItem.DropDownItems.Add(toggleAccidentalsToolStripMenuItem);
+            fileToolStripMenuItem.DropDownItems.Add(toggleDarkModeToolStripMenuItem);
             fileToolStripMenuItem.DropDownItems.Add(new ToolStripSeparator());
             fileToolStripMenuItem.DropDownItems.Add(exitToolStripMenuItem);
         }
@@ -565,6 +686,11 @@ namespace Fretman
             fretboardImage.Image = fretboard.Render();
         }
 
+        private void ApplyIntervalPattern(RootNoteOption root, Fretboard.IntervalPatternDefinition pattern)
+        {
+            ApplyScalePattern(new ScaleSelection(root, new ScalePattern(pattern.MenuText, pattern.TitleText, pattern.Intervals)));
+        }
+
         private string GetRootTitle(RootNoteOption root)
         {
             return fretboard.UseSharps ? root.SharpText : root.FlatText;
@@ -606,6 +732,11 @@ namespace Fretman
                 colorButtons[i].BackColor = theme.NonScaleNoteColor;
                 textColorButtons[i].BackColor = theme.NonScaleTextColor;
             }
+        }
+
+        private void toggleDarkModeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ApplyDarkMode(!isDarkMode);
         }
 
         private void ApplyTheme(ThemeDefinition theme)
@@ -784,6 +915,19 @@ namespace Fretman
             ApplyScalePattern(selection);
         }
 
+        private void intervalMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem menuItem = sender as ToolStripMenuItem;
+            IntervalSelection selection = menuItem == null ? null : menuItem.Tag as IntervalSelection;
+
+            if (selection == null)
+            {
+                return;
+            }
+
+            ApplyIntervalPattern(selection.Root, selection.Pattern);
+        }
+
         private void clearPatternMenuItem_Click(object sender, EventArgs e)
         {
             ClearPattern();
@@ -912,6 +1056,7 @@ namespace Fretman
             configuration.DisplayDots = fretboard.DisplayDots;
             configuration.DotWidth = fretboard.DotWidth;
             configuration.NoteWidth = fretboard.NoteWidth;
+            configuration.TopJustifyPadding = fretboard.TopJustifyPadding;
             configuration.BackgroundColorArgb = fretboard.BackgroundColor.ToArgb();
             configuration.FretColorArgb = fretboard.FretColor.ToArgb();
             configuration.DotColorArgb = fretboard.DotColor.ToArgb();
@@ -923,6 +1068,7 @@ namespace Fretman
             configuration.ShowFretNumbers = fretboard.ShowFretNumbers;
             configuration.RootHighlightColorArgb = fretboard.RootHighlightColor.ToArgb();
             configuration.FingerboardBackground = (int)fretboard.FingerboardBackground;
+            configuration.IsDarkMode = isDarkMode;
             configuration.UseSharps = fretboard.UseSharps;
             configuration.RootNoteIndex = fretboard.RootNoteIndex;
             configuration.BaseNotes = ToIntArray(fretboard.BaseNotes.Select(note => (int)note).ToArray());
@@ -959,6 +1105,7 @@ namespace Fretman
                 fretboard.DisplayDots = configuration.DisplayDots;
                 fretboard.DotWidth = configuration.DotWidth;
                 fretboard.NoteWidth = configuration.NoteWidth;
+                fretboard.TopJustifyPadding = configuration.TopJustifyPadding;
                 fretboard.BackgroundColor = Color.FromArgb(configuration.BackgroundColorArgb);
                 fretboard.FretColor = Color.FromArgb(configuration.FretColorArgb);
                 fretboard.DotColor = Color.FromArgb(configuration.DotColorArgb);
@@ -972,6 +1119,7 @@ namespace Fretman
                 fretboard.FingerboardBackground = Enum.IsDefined(typeof(Fretboard.FingerboardBackgroundKind), configuration.FingerboardBackground)
                     ? (Fretboard.FingerboardBackgroundKind)configuration.FingerboardBackground
                     : fretboard.FingerboardBackground;
+                ApplyDarkMode(configuration.IsDarkMode);
                 fretboard.UseSharps = configuration.UseSharps;
                 fretboard.RootNoteIndex = configuration.RootNoteIndex;
 
@@ -1022,6 +1170,57 @@ namespace Fretman
         private void UpdateStatusText()
         {
             Text = string.Format("Fretman - {0} strings / {1} frets", fretboard.Strings, fretboard.Frets);
+        }
+
+        private void ApplyDarkMode(bool enabled)
+        {
+            isDarkMode = enabled;
+
+            Color formBackColor = enabled ? Color.FromArgb(32, 34, 37) : SystemColors.Control;
+            Color surfaceColor = enabled ? Color.FromArgb(45, 47, 51) : SystemColors.Control;
+            Color propertyBackColor = enabled ? Color.FromArgb(37, 39, 43) : SystemColors.Window;
+            Color propertyForeColor = enabled ? Color.Gainsboro : SystemColors.ControlText;
+            Color imageBackColor = enabled ? Color.FromArgb(24, 26, 29) : Color.White;
+
+            BackColor = formBackColor;
+            ForeColor = propertyForeColor;
+            toolStripContainer1.BackColor = formBackColor;
+            toolStripContainer1.ContentPanel.BackColor = formBackColor;
+            toolStripContainer1.TopToolStripPanel.BackColor = formBackColor;
+            menuStrip1.BackColor = formBackColor;
+            menuStrip1.ForeColor = propertyForeColor;
+            splitContainer1.BackColor = formBackColor;
+            splitContainer2.BackColor = formBackColor;
+            noteLayoutPanel.BackColor = surfaceColor;
+            fretboardImage.BackColor = surfaceColor;
+            if (fretboard != null)
+            {
+                fretboard.BackgroundColor = imageBackColor;
+            }
+            fretboardProperties.ViewBackColor = propertyBackColor;
+            fretboardProperties.ViewForeColor = propertyForeColor;
+            fretboardProperties.LineColor = enabled ? Color.FromArgb(68, 70, 74) : SystemColors.ScrollBar;
+            fretboardProperties.HelpBackColor = propertyBackColor;
+            fretboardProperties.HelpForeColor = propertyForeColor;
+            fretboardProperties.CategoryForeColor = propertyForeColor;
+            fretboardProperties.CommandsBackColor = propertyBackColor;
+            fretboardProperties.CommandsForeColor = propertyForeColor;
+            fretboardProperties.BackColor = propertyBackColor;
+
+            for (int i = 0; i < noteLabels.Length; i++)
+            {
+                noteLabels[i].BackColor = surfaceColor;
+                noteLabels[i].ForeColor = i == fretboard.RootNoteIndex ? fretboard.RootHighlightColor : propertyForeColor;
+            }
+
+            foreach (Control control in noteLayoutPanel.Controls)
+            {
+                if (control is ComboBox)
+                {
+                    control.BackColor = enabled ? Color.FromArgb(54, 57, 63) : SystemColors.Window;
+                    control.ForeColor = propertyForeColor;
+                }
+            }
         }
 
         private void ConfigureControlTips()

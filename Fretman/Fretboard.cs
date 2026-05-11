@@ -31,6 +31,22 @@ namespace Fretman
             public Color DotColor { get; set; }
         }
 
+        public sealed class IntervalPatternDefinition
+        {
+            public IntervalPatternDefinition(string menuText, string titleText, params int[] intervals)
+            {
+                MenuText = menuText;
+                TitleText = titleText;
+                Intervals = intervals;
+            }
+
+            public string MenuText { get; private set; }
+
+            public string TitleText { get; private set; }
+
+            public int[] Intervals { get; private set; }
+        }
+
         public sealed class TuningDefinition
         {
             public TuningDefinition(string instrumentName, string tuningName, params Notes[] baseNotes)
@@ -153,6 +169,21 @@ namespace Fretman
                 if (_title != value)
                 {
                     _title = value;
+                    this.onChanged();
+                }
+            }
+        }
+
+        private float _topJustifyPadding = 24f;
+        [DisplayName("Top Preview Padding")]
+        public float TopJustifyPadding
+        {
+            get { return _topJustifyPadding; }
+            set
+            {
+                if (value != _topJustifyPadding)
+                {
+                    _topJustifyPadding = Math.Max(0f, value);
                     this.onChanged();
                 }
             }
@@ -784,20 +815,22 @@ namespace Fretman
         {
             // Compute size
             float width = _padding * 2 + _noteWidth + _nutWidth + _fretboardLength;
-            float headerHeight = _padding + _titleFont.Size;
+            float topAreaPadding = _padding + _topJustifyPadding;
+            float headerHeight = topAreaPadding + _titleFont.Size;
             float fingerboardHeight = (_strings - 1) * _stringSpacing;
             float fretNumberHeight = _showFretNumbers ? Math.Max(18f, _noteFont.Size * 0.8f) : 0f;
-            float height = _padding * 2 + headerHeight + fingerboardHeight + fretNumberHeight;
+            float height = topAreaPadding + _padding + headerHeight + fingerboardHeight + fretNumberHeight;
 
             float fretOffset;
-            float neckCenter = headerHeight + _padding + fingerboardHeight / 2;
+            float neckTop = headerHeight + _padding * 0.35f;
+            float neckCenter = neckTop + fingerboardHeight / 2;
             float dotRadius = this.DotWidth / 2.0f;
             float noteRadius = this.NoteWidth / 2.0f;
             float[] fretOffsets = new float[this.Frets + 1];
             float[] noteXOffsets = new float[this.Frets + 1];
             float[] noteYOffsets = new float[this.Strings];
             float scaleLength = _fretboardLength * 1.3333333f;
-            float fingerboardTop = headerHeight + _padding;
+            float fingerboardTop = neckTop;
             float fingerboardBottom = fingerboardTop + fingerboardHeight;
             RectangleF fingerboardRect = new RectangleF(_padding + _noteWidth, fingerboardTop, _nutWidth + _fretboardLength, fingerboardHeight);
 
@@ -819,8 +852,23 @@ namespace Fretman
                 Brush nutBrush = new SolidBrush(this.NutColor);
                 Brush titleBrush = new SolidBrush(this.TitleColor);
 
-                // Draw title
-                g.DrawString(_title, _titleFont, titleBrush, new PointF(_padding, _padding));
+                // Draw title horizontally, centered in the reserved space above the fretboard.
+                float titleAreaTop = _padding;
+                float titleAreaBottom = fingerboardTop - Math.Max(8f, _padding * 0.15f);
+                float titleAreaHeight = Math.Max(0f, titleAreaBottom - titleAreaTop);
+
+                if (titleAreaHeight > 0f)
+                {
+                    StringFormat titleFormat = new StringFormat(StringFormatFlags.NoClip | StringFormatFlags.NoWrap);
+                    titleFormat.Alignment = StringAlignment.Near;
+                    titleFormat.LineAlignment = StringAlignment.Center;
+
+                    float titleAreaLeft = _padding;
+                    float titleAreaWidth = width - (_padding * 2f);
+                    g.DrawString(_title, _titleFont, titleBrush, new RectangleF(titleAreaLeft, titleAreaTop, titleAreaWidth, titleAreaHeight), titleFormat);
+
+                    titleFormat.Dispose();
+                }
 
                 // Draw nut
                 g.DrawRectangle(fretPen, _padding + _noteWidth, fingerboardTop, _nutWidth,  fingerboardHeight);

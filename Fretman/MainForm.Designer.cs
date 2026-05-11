@@ -28,8 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.fretboardImage = new System.Windows.Forms.PictureBox();
             this.noteLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.noteTextColor3 = new System.Windows.Forms.Button();
+            this.noteTextColor4 = new System.Windows.Forms.Button();
+            this.noteTextColor5 = new System.Windows.Forms.Button();
+            this.noteTextColor0 = new System.Windows.Forms.Button();
+            this.noteTextColor1 = new System.Windows.Forms.Button();
+            this.noteTextColor2 = new System.Windows.Forms.Button();
+            this.noteTextColor9 = new System.Windows.Forms.Button();
+            this.noteTextColor10 = new System.Windows.Forms.Button();
+            this.noteTextColor11 = new System.Windows.Forms.Button();
+            this.noteTextColor6 = new System.Windows.Forms.Button();
+            this.noteTextColor7 = new System.Windows.Forms.Button();
+            this.noteTextColor8 = new System.Windows.Forms.Button();
             this.noteColor11 = new System.Windows.Forms.Button();
             this.noteColor10 = new System.Windows.Forms.Button();
             this.noteColor9 = new System.Windows.Forms.Button();
@@ -76,18 +89,6 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.renderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.noteTextColor8 = new System.Windows.Forms.Button();
-            this.noteTextColor7 = new System.Windows.Forms.Button();
-            this.noteTextColor6 = new System.Windows.Forms.Button();
-            this.noteTextColor11 = new System.Windows.Forms.Button();
-            this.noteTextColor10 = new System.Windows.Forms.Button();
-            this.noteTextColor9 = new System.Windows.Forms.Button();
-            this.noteTextColor2 = new System.Windows.Forms.Button();
-            this.noteTextColor1 = new System.Windows.Forms.Button();
-            this.noteTextColor0 = new System.Windows.Forms.Button();
-            this.noteTextColor5 = new System.Windows.Forms.Button();
-            this.noteTextColor4 = new System.Windows.Forms.Button();
-            this.noteTextColor3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fretboardImage)).BeginInit();
             this.noteLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -107,9 +108,10 @@
             // fretboardImage
             // 
             this.fretboardImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fretboardImage.Location = new System.Drawing.Point(0, 0);
+            this.fretboardImage.Location = new System.Drawing.Point(12, 12);
+            this.fretboardImage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.fretboardImage.Name = "fretboardImage";
-            this.fretboardImage.Size = new System.Drawing.Size(1086, 521);
+            this.fretboardImage.Size = new System.Drawing.Size(1690, 800);
             this.fretboardImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.fretboardImage.TabIndex = 0;
             this.fretboardImage.TabStop = false;
@@ -178,24 +180,169 @@
             this.noteLayoutPanel.Controls.Add(this.noteStyle0, 0, 1);
             this.noteLayoutPanel.Controls.Add(this.noteColor0, 0, 2);
             this.noteLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.noteLayoutPanel.Location = new System.Drawing.Point(8, 8);
-            this.noteLayoutPanel.Margin = new System.Windows.Forms.Padding(8);
+            this.noteLayoutPanel.Location = new System.Drawing.Point(12, 12);
+            this.noteLayoutPanel.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
             this.noteLayoutPanel.Name = "noteLayoutPanel";
             this.noteLayoutPanel.RowCount = 4;
-            this.noteLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.noteLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.noteLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.noteLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.noteLayoutPanel.Size = new System.Drawing.Size(1086, 120);
+            this.noteLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.noteLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.noteLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.noteLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.noteLayoutPanel.Size = new System.Drawing.Size(1690, 112);
             this.noteLayoutPanel.TabIndex = 0;
+            // 
+            // noteTextColor3
+            // 
+            this.noteTextColor3.BackColor = System.Drawing.Color.White;
+            this.noteTextColor3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.noteTextColor3.Location = new System.Drawing.Point(424, 139);
+            this.noteTextColor3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.noteTextColor3.Name = "noteTextColor3";
+            this.noteTextColor3.Size = new System.Drawing.Size(132, 27);
+            this.noteTextColor3.TabIndex = 47;
+            this.noteTextColor3.UseVisualStyleBackColor = false;
+            this.noteTextColor3.Click += new System.EventHandler(this.noteColor_Click);
+            // 
+            // noteTextColor4
+            // 
+            this.noteTextColor4.BackColor = System.Drawing.Color.White;
+            this.noteTextColor4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.noteTextColor4.Location = new System.Drawing.Point(564, 139);
+            this.noteTextColor4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.noteTextColor4.Name = "noteTextColor4";
+            this.noteTextColor4.Size = new System.Drawing.Size(132, 27);
+            this.noteTextColor4.TabIndex = 46;
+            this.noteTextColor4.UseVisualStyleBackColor = false;
+            this.noteTextColor4.Click += new System.EventHandler(this.noteColor_Click);
+            // 
+            // noteTextColor5
+            // 
+            this.noteTextColor5.BackColor = System.Drawing.Color.White;
+            this.noteTextColor5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.noteTextColor5.Location = new System.Drawing.Point(704, 139);
+            this.noteTextColor5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.noteTextColor5.Name = "noteTextColor5";
+            this.noteTextColor5.Size = new System.Drawing.Size(132, 27);
+            this.noteTextColor5.TabIndex = 45;
+            this.noteTextColor5.UseVisualStyleBackColor = false;
+            this.noteTextColor5.Click += new System.EventHandler(this.noteColor_Click);
+            // 
+            // noteTextColor0
+            // 
+            this.noteTextColor0.BackColor = System.Drawing.Color.White;
+            this.noteTextColor0.Dock = System.Windows.Forms.DockStyle.Top;
+            this.noteTextColor0.Location = new System.Drawing.Point(4, 139);
+            this.noteTextColor0.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.noteTextColor0.Name = "noteTextColor0";
+            this.noteTextColor0.Size = new System.Drawing.Size(132, 27);
+            this.noteTextColor0.TabIndex = 44;
+            this.noteTextColor0.UseVisualStyleBackColor = false;
+            this.noteTextColor0.Click += new System.EventHandler(this.noteColor_Click);
+            // 
+            // noteTextColor1
+            // 
+            this.noteTextColor1.BackColor = System.Drawing.Color.White;
+            this.noteTextColor1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.noteTextColor1.Location = new System.Drawing.Point(144, 139);
+            this.noteTextColor1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.noteTextColor1.Name = "noteTextColor1";
+            this.noteTextColor1.Size = new System.Drawing.Size(132, 27);
+            this.noteTextColor1.TabIndex = 43;
+            this.noteTextColor1.UseVisualStyleBackColor = false;
+            this.noteTextColor1.Click += new System.EventHandler(this.noteColor_Click);
+            // 
+            // noteTextColor2
+            // 
+            this.noteTextColor2.BackColor = System.Drawing.Color.White;
+            this.noteTextColor2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.noteTextColor2.Location = new System.Drawing.Point(284, 139);
+            this.noteTextColor2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.noteTextColor2.Name = "noteTextColor2";
+            this.noteTextColor2.Size = new System.Drawing.Size(132, 27);
+            this.noteTextColor2.TabIndex = 42;
+            this.noteTextColor2.UseVisualStyleBackColor = false;
+            this.noteTextColor2.Click += new System.EventHandler(this.noteColor_Click);
+            // 
+            // noteTextColor9
+            // 
+            this.noteTextColor9.BackColor = System.Drawing.Color.White;
+            this.noteTextColor9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.noteTextColor9.Location = new System.Drawing.Point(1264, 139);
+            this.noteTextColor9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.noteTextColor9.Name = "noteTextColor9";
+            this.noteTextColor9.Size = new System.Drawing.Size(132, 27);
+            this.noteTextColor9.TabIndex = 41;
+            this.noteTextColor9.UseVisualStyleBackColor = false;
+            this.noteTextColor9.Click += new System.EventHandler(this.noteColor_Click);
+            // 
+            // noteTextColor10
+            // 
+            this.noteTextColor10.BackColor = System.Drawing.Color.White;
+            this.noteTextColor10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.noteTextColor10.Location = new System.Drawing.Point(1404, 139);
+            this.noteTextColor10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.noteTextColor10.Name = "noteTextColor10";
+            this.noteTextColor10.Size = new System.Drawing.Size(132, 27);
+            this.noteTextColor10.TabIndex = 40;
+            this.noteTextColor10.UseVisualStyleBackColor = false;
+            this.noteTextColor10.Click += new System.EventHandler(this.noteColor_Click);
+            // 
+            // noteTextColor11
+            // 
+            this.noteTextColor11.BackColor = System.Drawing.Color.White;
+            this.noteTextColor11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.noteTextColor11.Location = new System.Drawing.Point(1544, 139);
+            this.noteTextColor11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.noteTextColor11.Name = "noteTextColor11";
+            this.noteTextColor11.Size = new System.Drawing.Size(142, 27);
+            this.noteTextColor11.TabIndex = 39;
+            this.noteTextColor11.UseVisualStyleBackColor = false;
+            this.noteTextColor11.Click += new System.EventHandler(this.noteColor_Click);
+            // 
+            // noteTextColor6
+            // 
+            this.noteTextColor6.BackColor = System.Drawing.Color.White;
+            this.noteTextColor6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.noteTextColor6.Location = new System.Drawing.Point(844, 139);
+            this.noteTextColor6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.noteTextColor6.Name = "noteTextColor6";
+            this.noteTextColor6.Size = new System.Drawing.Size(132, 27);
+            this.noteTextColor6.TabIndex = 38;
+            this.noteTextColor6.UseVisualStyleBackColor = false;
+            this.noteTextColor6.Click += new System.EventHandler(this.noteColor_Click);
+            // 
+            // noteTextColor7
+            // 
+            this.noteTextColor7.BackColor = System.Drawing.Color.White;
+            this.noteTextColor7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.noteTextColor7.Location = new System.Drawing.Point(984, 139);
+            this.noteTextColor7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.noteTextColor7.Name = "noteTextColor7";
+            this.noteTextColor7.Size = new System.Drawing.Size(132, 27);
+            this.noteTextColor7.TabIndex = 37;
+            this.noteTextColor7.UseVisualStyleBackColor = false;
+            this.noteTextColor7.Click += new System.EventHandler(this.noteColor_Click);
+            // 
+            // noteTextColor8
+            // 
+            this.noteTextColor8.BackColor = System.Drawing.Color.White;
+            this.noteTextColor8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.noteTextColor8.Location = new System.Drawing.Point(1124, 139);
+            this.noteTextColor8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.noteTextColor8.Name = "noteTextColor8";
+            this.noteTextColor8.Size = new System.Drawing.Size(132, 27);
+            this.noteTextColor8.TabIndex = 36;
+            this.noteTextColor8.UseVisualStyleBackColor = false;
+            this.noteTextColor8.Click += new System.EventHandler(this.noteColor_Click);
             // 
             // noteColor11
             // 
             this.noteColor11.BackColor = System.Drawing.Color.Black;
             this.noteColor11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.noteColor11.Location = new System.Drawing.Point(993, 66);
+            this.noteColor11.Location = new System.Drawing.Point(1544, 102);
+            this.noteColor11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.noteColor11.Name = "noteColor11";
-            this.noteColor11.Size = new System.Drawing.Size(90, 18);
+            this.noteColor11.Size = new System.Drawing.Size(142, 27);
             this.noteColor11.TabIndex = 35;
             this.noteColor11.UseVisualStyleBackColor = false;
             this.noteColor11.Click += new System.EventHandler(this.noteColor_Click);
@@ -204,9 +351,10 @@
             // 
             this.noteColor10.BackColor = System.Drawing.Color.Black;
             this.noteColor10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.noteColor10.Location = new System.Drawing.Point(903, 66);
+            this.noteColor10.Location = new System.Drawing.Point(1404, 102);
+            this.noteColor10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.noteColor10.Name = "noteColor10";
-            this.noteColor10.Size = new System.Drawing.Size(84, 18);
+            this.noteColor10.Size = new System.Drawing.Size(132, 27);
             this.noteColor10.TabIndex = 34;
             this.noteColor10.UseVisualStyleBackColor = false;
             this.noteColor10.Click += new System.EventHandler(this.noteColor_Click);
@@ -215,9 +363,10 @@
             // 
             this.noteColor9.BackColor = System.Drawing.Color.Black;
             this.noteColor9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.noteColor9.Location = new System.Drawing.Point(813, 66);
+            this.noteColor9.Location = new System.Drawing.Point(1264, 102);
+            this.noteColor9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.noteColor9.Name = "noteColor9";
-            this.noteColor9.Size = new System.Drawing.Size(84, 18);
+            this.noteColor9.Size = new System.Drawing.Size(132, 27);
             this.noteColor9.TabIndex = 33;
             this.noteColor9.UseVisualStyleBackColor = false;
             this.noteColor9.Click += new System.EventHandler(this.noteColor_Click);
@@ -226,9 +375,10 @@
             // 
             this.noteColor8.BackColor = System.Drawing.Color.Black;
             this.noteColor8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.noteColor8.Location = new System.Drawing.Point(723, 66);
+            this.noteColor8.Location = new System.Drawing.Point(1124, 102);
+            this.noteColor8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.noteColor8.Name = "noteColor8";
-            this.noteColor8.Size = new System.Drawing.Size(84, 18);
+            this.noteColor8.Size = new System.Drawing.Size(132, 27);
             this.noteColor8.TabIndex = 32;
             this.noteColor8.UseVisualStyleBackColor = false;
             this.noteColor8.Click += new System.EventHandler(this.noteColor_Click);
@@ -237,9 +387,10 @@
             // 
             this.noteColor7.BackColor = System.Drawing.Color.Black;
             this.noteColor7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.noteColor7.Location = new System.Drawing.Point(633, 66);
+            this.noteColor7.Location = new System.Drawing.Point(984, 102);
+            this.noteColor7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.noteColor7.Name = "noteColor7";
-            this.noteColor7.Size = new System.Drawing.Size(84, 18);
+            this.noteColor7.Size = new System.Drawing.Size(132, 27);
             this.noteColor7.TabIndex = 31;
             this.noteColor7.UseVisualStyleBackColor = false;
             this.noteColor7.Click += new System.EventHandler(this.noteColor_Click);
@@ -248,9 +399,10 @@
             // 
             this.noteColor6.BackColor = System.Drawing.Color.Black;
             this.noteColor6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.noteColor6.Location = new System.Drawing.Point(543, 66);
+            this.noteColor6.Location = new System.Drawing.Point(844, 102);
+            this.noteColor6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.noteColor6.Name = "noteColor6";
-            this.noteColor6.Size = new System.Drawing.Size(84, 18);
+            this.noteColor6.Size = new System.Drawing.Size(132, 27);
             this.noteColor6.TabIndex = 30;
             this.noteColor6.UseVisualStyleBackColor = false;
             this.noteColor6.Click += new System.EventHandler(this.noteColor_Click);
@@ -259,9 +411,10 @@
             // 
             this.noteColor5.BackColor = System.Drawing.Color.Black;
             this.noteColor5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.noteColor5.Location = new System.Drawing.Point(453, 66);
+            this.noteColor5.Location = new System.Drawing.Point(704, 102);
+            this.noteColor5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.noteColor5.Name = "noteColor5";
-            this.noteColor5.Size = new System.Drawing.Size(84, 18);
+            this.noteColor5.Size = new System.Drawing.Size(132, 27);
             this.noteColor5.TabIndex = 29;
             this.noteColor5.UseVisualStyleBackColor = false;
             this.noteColor5.Click += new System.EventHandler(this.noteColor_Click);
@@ -270,9 +423,10 @@
             // 
             this.noteColor4.BackColor = System.Drawing.Color.Black;
             this.noteColor4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.noteColor4.Location = new System.Drawing.Point(363, 66);
+            this.noteColor4.Location = new System.Drawing.Point(564, 102);
+            this.noteColor4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.noteColor4.Name = "noteColor4";
-            this.noteColor4.Size = new System.Drawing.Size(84, 18);
+            this.noteColor4.Size = new System.Drawing.Size(132, 27);
             this.noteColor4.TabIndex = 28;
             this.noteColor4.UseVisualStyleBackColor = false;
             this.noteColor4.Click += new System.EventHandler(this.noteColor_Click);
@@ -281,9 +435,10 @@
             // 
             this.noteColor3.BackColor = System.Drawing.Color.Black;
             this.noteColor3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.noteColor3.Location = new System.Drawing.Point(273, 66);
+            this.noteColor3.Location = new System.Drawing.Point(424, 102);
+            this.noteColor3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.noteColor3.Name = "noteColor3";
-            this.noteColor3.Size = new System.Drawing.Size(84, 18);
+            this.noteColor3.Size = new System.Drawing.Size(132, 27);
             this.noteColor3.TabIndex = 27;
             this.noteColor3.UseVisualStyleBackColor = false;
             this.noteColor3.Click += new System.EventHandler(this.noteColor_Click);
@@ -292,9 +447,10 @@
             // 
             this.noteColor2.BackColor = System.Drawing.Color.Black;
             this.noteColor2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.noteColor2.Location = new System.Drawing.Point(183, 66);
+            this.noteColor2.Location = new System.Drawing.Point(284, 102);
+            this.noteColor2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.noteColor2.Name = "noteColor2";
-            this.noteColor2.Size = new System.Drawing.Size(84, 18);
+            this.noteColor2.Size = new System.Drawing.Size(132, 27);
             this.noteColor2.TabIndex = 26;
             this.noteColor2.UseVisualStyleBackColor = false;
             this.noteColor2.Click += new System.EventHandler(this.noteColor_Click);
@@ -303,9 +459,10 @@
             // 
             this.noteColor1.BackColor = System.Drawing.Color.Black;
             this.noteColor1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.noteColor1.Location = new System.Drawing.Point(93, 66);
+            this.noteColor1.Location = new System.Drawing.Point(144, 102);
+            this.noteColor1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.noteColor1.Name = "noteColor1";
-            this.noteColor1.Size = new System.Drawing.Size(84, 18);
+            this.noteColor1.Size = new System.Drawing.Size(132, 27);
             this.noteColor1.TabIndex = 25;
             this.noteColor1.UseVisualStyleBackColor = false;
             this.noteColor1.Click += new System.EventHandler(this.noteColor_Click);
@@ -320,9 +477,10 @@
             "Square",
             "Circle",
             "Triangle"});
-            this.noteStyle11.Location = new System.Drawing.Point(993, 43);
+            this.noteStyle11.Location = new System.Drawing.Point(1544, 67);
+            this.noteStyle11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.noteStyle11.Name = "noteStyle11";
-            this.noteStyle11.Size = new System.Drawing.Size(90, 21);
+            this.noteStyle11.Size = new System.Drawing.Size(142, 28);
             this.noteStyle11.TabIndex = 23;
             this.noteStyle11.SelectedIndexChanged += new System.EventHandler(this.noteStyle_Changed);
             // 
@@ -336,9 +494,10 @@
             "Square",
             "Circle",
             "Triangle"});
-            this.noteStyle10.Location = new System.Drawing.Point(903, 43);
+            this.noteStyle10.Location = new System.Drawing.Point(1404, 67);
+            this.noteStyle10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.noteStyle10.Name = "noteStyle10";
-            this.noteStyle10.Size = new System.Drawing.Size(84, 21);
+            this.noteStyle10.Size = new System.Drawing.Size(132, 28);
             this.noteStyle10.TabIndex = 22;
             this.noteStyle10.SelectedIndexChanged += new System.EventHandler(this.noteStyle_Changed);
             // 
@@ -352,9 +511,10 @@
             "Square",
             "Circle",
             "Triangle"});
-            this.noteStyle9.Location = new System.Drawing.Point(813, 43);
+            this.noteStyle9.Location = new System.Drawing.Point(1264, 67);
+            this.noteStyle9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.noteStyle9.Name = "noteStyle9";
-            this.noteStyle9.Size = new System.Drawing.Size(84, 21);
+            this.noteStyle9.Size = new System.Drawing.Size(132, 28);
             this.noteStyle9.TabIndex = 21;
             this.noteStyle9.SelectedIndexChanged += new System.EventHandler(this.noteStyle_Changed);
             // 
@@ -368,9 +528,10 @@
             "Square",
             "Circle",
             "Triangle"});
-            this.noteStyle8.Location = new System.Drawing.Point(723, 43);
+            this.noteStyle8.Location = new System.Drawing.Point(1124, 67);
+            this.noteStyle8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.noteStyle8.Name = "noteStyle8";
-            this.noteStyle8.Size = new System.Drawing.Size(84, 21);
+            this.noteStyle8.Size = new System.Drawing.Size(132, 28);
             this.noteStyle8.TabIndex = 20;
             this.noteStyle8.SelectedIndexChanged += new System.EventHandler(this.noteStyle_Changed);
             // 
@@ -384,9 +545,10 @@
             "Square",
             "Circle",
             "Triangle"});
-            this.noteStyle7.Location = new System.Drawing.Point(633, 43);
+            this.noteStyle7.Location = new System.Drawing.Point(984, 67);
+            this.noteStyle7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.noteStyle7.Name = "noteStyle7";
-            this.noteStyle7.Size = new System.Drawing.Size(84, 21);
+            this.noteStyle7.Size = new System.Drawing.Size(132, 28);
             this.noteStyle7.TabIndex = 19;
             this.noteStyle7.SelectedIndexChanged += new System.EventHandler(this.noteStyle_Changed);
             // 
@@ -400,9 +562,10 @@
             "Square",
             "Circle",
             "Triangle"});
-            this.noteStyle6.Location = new System.Drawing.Point(543, 43);
+            this.noteStyle6.Location = new System.Drawing.Point(844, 67);
+            this.noteStyle6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.noteStyle6.Name = "noteStyle6";
-            this.noteStyle6.Size = new System.Drawing.Size(84, 21);
+            this.noteStyle6.Size = new System.Drawing.Size(132, 28);
             this.noteStyle6.TabIndex = 18;
             this.noteStyle6.SelectedIndexChanged += new System.EventHandler(this.noteStyle_Changed);
             // 
@@ -416,9 +579,10 @@
             "Square",
             "Circle",
             "Triangle"});
-            this.noteStyle5.Location = new System.Drawing.Point(453, 43);
+            this.noteStyle5.Location = new System.Drawing.Point(704, 67);
+            this.noteStyle5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.noteStyle5.Name = "noteStyle5";
-            this.noteStyle5.Size = new System.Drawing.Size(84, 21);
+            this.noteStyle5.Size = new System.Drawing.Size(132, 28);
             this.noteStyle5.TabIndex = 17;
             this.noteStyle5.SelectedIndexChanged += new System.EventHandler(this.noteStyle_Changed);
             // 
@@ -432,9 +596,10 @@
             "Square",
             "Circle",
             "Triangle"});
-            this.noteStyle4.Location = new System.Drawing.Point(363, 43);
+            this.noteStyle4.Location = new System.Drawing.Point(564, 67);
+            this.noteStyle4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.noteStyle4.Name = "noteStyle4";
-            this.noteStyle4.Size = new System.Drawing.Size(84, 21);
+            this.noteStyle4.Size = new System.Drawing.Size(132, 28);
             this.noteStyle4.TabIndex = 16;
             this.noteStyle4.SelectedIndexChanged += new System.EventHandler(this.noteStyle_Changed);
             // 
@@ -448,9 +613,10 @@
             "Square",
             "Circle",
             "Triangle"});
-            this.noteStyle3.Location = new System.Drawing.Point(273, 43);
+            this.noteStyle3.Location = new System.Drawing.Point(424, 67);
+            this.noteStyle3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.noteStyle3.Name = "noteStyle3";
-            this.noteStyle3.Size = new System.Drawing.Size(84, 21);
+            this.noteStyle3.Size = new System.Drawing.Size(132, 28);
             this.noteStyle3.TabIndex = 15;
             this.noteStyle3.SelectedIndexChanged += new System.EventHandler(this.noteStyle_Changed);
             // 
@@ -464,9 +630,10 @@
             "Square",
             "Circle",
             "Triangle"});
-            this.noteStyle2.Location = new System.Drawing.Point(183, 43);
+            this.noteStyle2.Location = new System.Drawing.Point(284, 67);
+            this.noteStyle2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.noteStyle2.Name = "noteStyle2";
-            this.noteStyle2.Size = new System.Drawing.Size(84, 21);
+            this.noteStyle2.Size = new System.Drawing.Size(132, 28);
             this.noteStyle2.TabIndex = 14;
             this.noteStyle2.SelectedIndexChanged += new System.EventHandler(this.noteStyle_Changed);
             // 
@@ -480,9 +647,10 @@
             "Square",
             "Circle",
             "Triangle"});
-            this.noteStyle1.Location = new System.Drawing.Point(93, 43);
+            this.noteStyle1.Location = new System.Drawing.Point(144, 67);
+            this.noteStyle1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.noteStyle1.Name = "noteStyle1";
-            this.noteStyle1.Size = new System.Drawing.Size(84, 21);
+            this.noteStyle1.Size = new System.Drawing.Size(132, 28);
             this.noteStyle1.TabIndex = 13;
             this.noteStyle1.SelectedIndexChanged += new System.EventHandler(this.noteStyle_Changed);
             // 
@@ -490,9 +658,10 @@
             // 
             this.noteLabel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.noteLabel11.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noteLabel11.Location = new System.Drawing.Point(993, 0);
+            this.noteLabel11.Location = new System.Drawing.Point(1544, 0);
+            this.noteLabel11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noteLabel11.Name = "noteLabel11";
-            this.noteLabel11.Size = new System.Drawing.Size(90, 40);
+            this.noteLabel11.Size = new System.Drawing.Size(142, 62);
             this.noteLabel11.TabIndex = 11;
             this.noteLabel11.Text = "B";
             this.noteLabel11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -501,9 +670,10 @@
             // 
             this.noteLabel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.noteLabel10.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noteLabel10.Location = new System.Drawing.Point(903, 0);
+            this.noteLabel10.Location = new System.Drawing.Point(1404, 0);
+            this.noteLabel10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noteLabel10.Name = "noteLabel10";
-            this.noteLabel10.Size = new System.Drawing.Size(84, 40);
+            this.noteLabel10.Size = new System.Drawing.Size(132, 62);
             this.noteLabel10.TabIndex = 10;
             this.noteLabel10.Text = "A#/Bb";
             this.noteLabel10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -512,9 +682,10 @@
             // 
             this.noteLabel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.noteLabel9.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noteLabel9.Location = new System.Drawing.Point(813, 0);
+            this.noteLabel9.Location = new System.Drawing.Point(1264, 0);
+            this.noteLabel9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noteLabel9.Name = "noteLabel9";
-            this.noteLabel9.Size = new System.Drawing.Size(84, 40);
+            this.noteLabel9.Size = new System.Drawing.Size(132, 62);
             this.noteLabel9.TabIndex = 9;
             this.noteLabel9.Text = "A";
             this.noteLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -523,9 +694,10 @@
             // 
             this.noteLabel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.noteLabel8.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noteLabel8.Location = new System.Drawing.Point(723, 0);
+            this.noteLabel8.Location = new System.Drawing.Point(1124, 0);
+            this.noteLabel8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noteLabel8.Name = "noteLabel8";
-            this.noteLabel8.Size = new System.Drawing.Size(84, 40);
+            this.noteLabel8.Size = new System.Drawing.Size(132, 62);
             this.noteLabel8.TabIndex = 8;
             this.noteLabel8.Text = "G#/Ab";
             this.noteLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -534,9 +706,10 @@
             // 
             this.noteLabel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.noteLabel7.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noteLabel7.Location = new System.Drawing.Point(633, 0);
+            this.noteLabel7.Location = new System.Drawing.Point(984, 0);
+            this.noteLabel7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noteLabel7.Name = "noteLabel7";
-            this.noteLabel7.Size = new System.Drawing.Size(84, 40);
+            this.noteLabel7.Size = new System.Drawing.Size(132, 62);
             this.noteLabel7.TabIndex = 7;
             this.noteLabel7.Text = "G";
             this.noteLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -545,9 +718,10 @@
             // 
             this.noteLabel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.noteLabel6.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noteLabel6.Location = new System.Drawing.Point(543, 0);
+            this.noteLabel6.Location = new System.Drawing.Point(844, 0);
+            this.noteLabel6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noteLabel6.Name = "noteLabel6";
-            this.noteLabel6.Size = new System.Drawing.Size(84, 40);
+            this.noteLabel6.Size = new System.Drawing.Size(132, 62);
             this.noteLabel6.TabIndex = 6;
             this.noteLabel6.Text = "F#/Gb";
             this.noteLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -556,9 +730,10 @@
             // 
             this.noteLabel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.noteLabel5.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noteLabel5.Location = new System.Drawing.Point(453, 0);
+            this.noteLabel5.Location = new System.Drawing.Point(704, 0);
+            this.noteLabel5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noteLabel5.Name = "noteLabel5";
-            this.noteLabel5.Size = new System.Drawing.Size(84, 40);
+            this.noteLabel5.Size = new System.Drawing.Size(132, 62);
             this.noteLabel5.TabIndex = 5;
             this.noteLabel5.Text = "F";
             this.noteLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -567,9 +742,10 @@
             // 
             this.noteLabel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.noteLabel4.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noteLabel4.Location = new System.Drawing.Point(363, 0);
+            this.noteLabel4.Location = new System.Drawing.Point(564, 0);
+            this.noteLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noteLabel4.Name = "noteLabel4";
-            this.noteLabel4.Size = new System.Drawing.Size(84, 40);
+            this.noteLabel4.Size = new System.Drawing.Size(132, 62);
             this.noteLabel4.TabIndex = 4;
             this.noteLabel4.Text = "E";
             this.noteLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -578,9 +754,10 @@
             // 
             this.noteLabel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.noteLabel3.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noteLabel3.Location = new System.Drawing.Point(273, 0);
+            this.noteLabel3.Location = new System.Drawing.Point(424, 0);
+            this.noteLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noteLabel3.Name = "noteLabel3";
-            this.noteLabel3.Size = new System.Drawing.Size(84, 40);
+            this.noteLabel3.Size = new System.Drawing.Size(132, 62);
             this.noteLabel3.TabIndex = 3;
             this.noteLabel3.Text = "D#/Eb";
             this.noteLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -589,9 +766,10 @@
             // 
             this.noteLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.noteLabel2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noteLabel2.Location = new System.Drawing.Point(183, 0);
+            this.noteLabel2.Location = new System.Drawing.Point(284, 0);
+            this.noteLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noteLabel2.Name = "noteLabel2";
-            this.noteLabel2.Size = new System.Drawing.Size(84, 40);
+            this.noteLabel2.Size = new System.Drawing.Size(132, 62);
             this.noteLabel2.TabIndex = 2;
             this.noteLabel2.Text = "D";
             this.noteLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -600,9 +778,10 @@
             // 
             this.noteLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.noteLabel1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noteLabel1.Location = new System.Drawing.Point(93, 0);
+            this.noteLabel1.Location = new System.Drawing.Point(144, 0);
+            this.noteLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noteLabel1.Name = "noteLabel1";
-            this.noteLabel1.Size = new System.Drawing.Size(84, 40);
+            this.noteLabel1.Size = new System.Drawing.Size(132, 62);
             this.noteLabel1.TabIndex = 1;
             this.noteLabel1.Text = "C#/Db";
             this.noteLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -611,9 +790,10 @@
             // 
             this.noteLabel0.Dock = System.Windows.Forms.DockStyle.Fill;
             this.noteLabel0.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noteLabel0.Location = new System.Drawing.Point(3, 0);
+            this.noteLabel0.Location = new System.Drawing.Point(4, 0);
+            this.noteLabel0.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noteLabel0.Name = "noteLabel0";
-            this.noteLabel0.Size = new System.Drawing.Size(84, 40);
+            this.noteLabel0.Size = new System.Drawing.Size(132, 62);
             this.noteLabel0.TabIndex = 0;
             this.noteLabel0.Text = "C";
             this.noteLabel0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -628,9 +808,10 @@
             "Square",
             "Circle",
             "Triangle"});
-            this.noteStyle0.Location = new System.Drawing.Point(3, 43);
+            this.noteStyle0.Location = new System.Drawing.Point(4, 67);
+            this.noteStyle0.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.noteStyle0.Name = "noteStyle0";
-            this.noteStyle0.Size = new System.Drawing.Size(84, 21);
+            this.noteStyle0.Size = new System.Drawing.Size(132, 28);
             this.noteStyle0.TabIndex = 12;
             this.noteStyle0.SelectedIndexChanged += new System.EventHandler(this.noteStyle_Changed);
             // 
@@ -638,9 +819,10 @@
             // 
             this.noteColor0.BackColor = System.Drawing.Color.Black;
             this.noteColor0.Dock = System.Windows.Forms.DockStyle.Top;
-            this.noteColor0.Location = new System.Drawing.Point(3, 66);
+            this.noteColor0.Location = new System.Drawing.Point(4, 102);
+            this.noteColor0.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.noteColor0.Name = "noteColor0";
-            this.noteColor0.Size = new System.Drawing.Size(84, 18);
+            this.noteColor0.Size = new System.Drawing.Size(132, 27);
             this.noteColor0.TabIndex = 24;
             this.noteColor0.UseVisualStyleBackColor = false;
             this.noteColor0.Click += new System.EventHandler(this.noteColor_Click);
@@ -649,11 +831,11 @@
             // 
             this.fretboardProperties.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fretboardProperties.HelpVisible = false;
-            this.fretboardProperties.Location = new System.Drawing.Point(8, 8);
-            this.fretboardProperties.Margin = new System.Windows.Forms.Padding(8);
+            this.fretboardProperties.Location = new System.Drawing.Point(12, 12);
+            this.fretboardProperties.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
             this.fretboardProperties.Name = "fretboardProperties";
             this.fretboardProperties.PropertySort = System.Windows.Forms.PropertySort.NoSort;
-            this.fretboardProperties.Size = new System.Drawing.Size(238, 621);
+            this.fretboardProperties.Size = new System.Drawing.Size(242, 966);
             this.fretboardProperties.TabIndex = 0;
             this.fretboardProperties.ToolbarVisible = false;
             // 
@@ -661,20 +843,22 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 6);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.fretboardProperties);
-            this.splitContainer1.Panel1.Padding = new System.Windows.Forms.Padding(8);
+            this.splitContainer1.Panel1.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(8);
-            this.splitContainer1.Size = new System.Drawing.Size(1340, 645);
+            this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.splitContainer1.Size = new System.Drawing.Size(2010, 990);
             this.splitContainer1.SplitterDistance = 266;
+            this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 1;
             // 
             // splitContainer2
@@ -682,22 +866,24 @@
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer2.IsSplitterFixed = true;
-            this.splitContainer2.Location = new System.Drawing.Point(8, 8);
+            this.splitContainer2.Location = new System.Drawing.Point(12, 12);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.Controls.Add(this.noteLayoutPanel);
-            this.splitContainer2.Panel1.Padding = new System.Windows.Forms.Padding(8);
+            this.splitContainer2.Panel1.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
             // 
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.AutoScroll = true;
             this.splitContainer2.Panel2.Controls.Add(this.fretboardImage);
-            this.splitContainer2.Panel2.Padding = new System.Windows.Forms.Padding(8);
-            this.splitContainer2.Size = new System.Drawing.Size(1046, 629);
+            this.splitContainer2.Panel2.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.splitContainer2.Size = new System.Drawing.Size(1714, 966);
             this.splitContainer2.SplitterDistance = 136;
+            this.splitContainer2.SplitterWidth = 6;
             this.splitContainer2.TabIndex = 0;
             // 
             // saveFileDialog
@@ -712,14 +898,16 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.splitContainer1);
-            this.toolStripContainer1.ContentPanel.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1340, 645);
+            this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.toolStripContainer1.ContentPanel.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(2010, 996);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.LeftToolStripPanelVisible = false;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
+            this.toolStripContainer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.toolStripContainer1.Name = "toolStripContainer1";
             this.toolStripContainer1.RightToolStripPanelVisible = false;
-            this.toolStripContainer1.Size = new System.Drawing.Size(1340, 669);
+            this.toolStripContainer1.Size = new System.Drawing.Size(2010, 1029);
             this.toolStripContainer1.TabIndex = 2;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -730,12 +918,14 @@
             // menuStrip1
             // 
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1340, 30);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(2010, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -745,163 +935,32 @@
             this.renderToolStripMenuItem,
             this.saveToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // renderToolStripMenuItem
             // 
             this.renderToolStripMenuItem.Name = "renderToolStripMenuItem";
-            this.renderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.renderToolStripMenuItem.Size = new System.Drawing.Size(169, 34);
             this.renderToolStripMenuItem.Text = "&Render";
             this.renderToolStripMenuItem.Click += new System.EventHandler(this.renderToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(169, 34);
             this.saveToolStripMenuItem.Text = "&Save...";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
-            // noteTextColor8
-            // 
-            this.noteTextColor8.BackColor = System.Drawing.Color.White;
-            this.noteTextColor8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.noteTextColor8.Location = new System.Drawing.Point(723, 90);
-            this.noteTextColor8.Name = "noteTextColor8";
-            this.noteTextColor8.Size = new System.Drawing.Size(84, 18);
-            this.noteTextColor8.TabIndex = 36;
-            this.noteTextColor8.UseVisualStyleBackColor = false;
-            this.noteTextColor8.Click += new System.EventHandler(this.noteColor_Click);
-            // 
-            // noteTextColor7
-            // 
-            this.noteTextColor7.BackColor = System.Drawing.Color.White;
-            this.noteTextColor7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.noteTextColor7.Location = new System.Drawing.Point(633, 90);
-            this.noteTextColor7.Name = "noteTextColor7";
-            this.noteTextColor7.Size = new System.Drawing.Size(84, 18);
-            this.noteTextColor7.TabIndex = 37;
-            this.noteTextColor7.UseVisualStyleBackColor = false;
-            this.noteTextColor7.Click += new System.EventHandler(this.noteColor_Click);
-            // 
-            // noteTextColor6
-            // 
-            this.noteTextColor6.BackColor = System.Drawing.Color.White;
-            this.noteTextColor6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.noteTextColor6.Location = new System.Drawing.Point(543, 90);
-            this.noteTextColor6.Name = "noteTextColor6";
-            this.noteTextColor6.Size = new System.Drawing.Size(84, 18);
-            this.noteTextColor6.TabIndex = 38;
-            this.noteTextColor6.UseVisualStyleBackColor = false;
-            this.noteTextColor6.Click += new System.EventHandler(this.noteColor_Click);
-            // 
-            // noteTextColor11
-            // 
-            this.noteTextColor11.BackColor = System.Drawing.Color.White;
-            this.noteTextColor11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.noteTextColor11.Location = new System.Drawing.Point(993, 90);
-            this.noteTextColor11.Name = "noteTextColor11";
-            this.noteTextColor11.Size = new System.Drawing.Size(90, 18);
-            this.noteTextColor11.TabIndex = 39;
-            this.noteTextColor11.UseVisualStyleBackColor = false;
-            this.noteTextColor11.Click += new System.EventHandler(this.noteColor_Click);
-            // 
-            // noteTextColor10
-            // 
-            this.noteTextColor10.BackColor = System.Drawing.Color.White;
-            this.noteTextColor10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.noteTextColor10.Location = new System.Drawing.Point(903, 90);
-            this.noteTextColor10.Name = "noteTextColor10";
-            this.noteTextColor10.Size = new System.Drawing.Size(84, 18);
-            this.noteTextColor10.TabIndex = 40;
-            this.noteTextColor10.UseVisualStyleBackColor = false;
-            this.noteTextColor10.Click += new System.EventHandler(this.noteColor_Click);
-            // 
-            // noteTextColor9
-            // 
-            this.noteTextColor9.BackColor = System.Drawing.Color.White;
-            this.noteTextColor9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.noteTextColor9.Location = new System.Drawing.Point(813, 90);
-            this.noteTextColor9.Name = "noteTextColor9";
-            this.noteTextColor9.Size = new System.Drawing.Size(84, 18);
-            this.noteTextColor9.TabIndex = 41;
-            this.noteTextColor9.UseVisualStyleBackColor = false;
-            this.noteTextColor9.Click += new System.EventHandler(this.noteColor_Click);
-            // 
-            // noteTextColor2
-            // 
-            this.noteTextColor2.BackColor = System.Drawing.Color.White;
-            this.noteTextColor2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.noteTextColor2.Location = new System.Drawing.Point(183, 90);
-            this.noteTextColor2.Name = "noteTextColor2";
-            this.noteTextColor2.Size = new System.Drawing.Size(84, 18);
-            this.noteTextColor2.TabIndex = 42;
-            this.noteTextColor2.UseVisualStyleBackColor = false;
-            this.noteTextColor2.Click += new System.EventHandler(this.noteColor_Click);
-            // 
-            // noteTextColor1
-            // 
-            this.noteTextColor1.BackColor = System.Drawing.Color.White;
-            this.noteTextColor1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.noteTextColor1.Location = new System.Drawing.Point(93, 90);
-            this.noteTextColor1.Name = "noteTextColor1";
-            this.noteTextColor1.Size = new System.Drawing.Size(84, 18);
-            this.noteTextColor1.TabIndex = 43;
-            this.noteTextColor1.UseVisualStyleBackColor = false;
-            this.noteTextColor1.Click += new System.EventHandler(this.noteColor_Click);
-            // 
-            // noteTextColor0
-            // 
-            this.noteTextColor0.BackColor = System.Drawing.Color.White;
-            this.noteTextColor0.Dock = System.Windows.Forms.DockStyle.Top;
-            this.noteTextColor0.Location = new System.Drawing.Point(3, 90);
-            this.noteTextColor0.Name = "noteTextColor0";
-            this.noteTextColor0.Size = new System.Drawing.Size(84, 18);
-            this.noteTextColor0.TabIndex = 44;
-            this.noteTextColor0.UseVisualStyleBackColor = false;
-            this.noteTextColor0.Click += new System.EventHandler(this.noteColor_Click);
-            // 
-            // noteTextColor5
-            // 
-            this.noteTextColor5.BackColor = System.Drawing.Color.White;
-            this.noteTextColor5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.noteTextColor5.Location = new System.Drawing.Point(453, 90);
-            this.noteTextColor5.Name = "noteTextColor5";
-            this.noteTextColor5.Size = new System.Drawing.Size(84, 18);
-            this.noteTextColor5.TabIndex = 45;
-            this.noteTextColor5.UseVisualStyleBackColor = false;
-            this.noteTextColor5.Click += new System.EventHandler(this.noteColor_Click);
-            // 
-            // noteTextColor4
-            // 
-            this.noteTextColor4.BackColor = System.Drawing.Color.White;
-            this.noteTextColor4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.noteTextColor4.Location = new System.Drawing.Point(363, 90);
-            this.noteTextColor4.Name = "noteTextColor4";
-            this.noteTextColor4.Size = new System.Drawing.Size(84, 18);
-            this.noteTextColor4.TabIndex = 46;
-            this.noteTextColor4.UseVisualStyleBackColor = false;
-            this.noteTextColor4.Click += new System.EventHandler(this.noteColor_Click);
-            // 
-            // noteTextColor3
-            // 
-            this.noteTextColor3.BackColor = System.Drawing.Color.White;
-            this.noteTextColor3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.noteTextColor3.Location = new System.Drawing.Point(273, 90);
-            this.noteTextColor3.Name = "noteTextColor3";
-            this.noteTextColor3.Size = new System.Drawing.Size(84, 18);
-            this.noteTextColor3.TabIndex = 47;
-            this.noteTextColor3.UseVisualStyleBackColor = false;
-            this.noteTextColor3.Click += new System.EventHandler(this.noteColor_Click);
-            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1340, 669);
+            this.ClientSize = new System.Drawing.Size(2010, 1029);
             this.Controls.Add(this.toolStripContainer1);
-            this.Icon = AppIcon.CreateApplicationIcon();
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MainForm";
             this.Text = "Fretman";
             ((System.ComponentModel.ISupportInitialize)(this.fretboardImage)).EndInit();
